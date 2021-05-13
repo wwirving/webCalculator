@@ -1,0 +1,44 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.grid {
+	height: 800px;
+	width: 70%;
+	border: 5px solid red;
+	margin: 50px auto; // centres vertically
+	padding: 10px;
+
+	display: grid;
+
+	// set columns
+	// fr is a fractional unit
+
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+
+	// set rows
+
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+
+	gap: 10px;
+
+	& > * {
+		background-color: red;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__cell--1 {
+		background-color: yellow;
+		// set grid column -> starts / ends
+		grid-column: 1 / 5;
+	}
+
+	&__cell--16 {
+		background-color: blue;
+		grid-column: 1 / 3;
+	}
+}
