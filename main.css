@@ -1,41 +1,63 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
+@font-face {
+  font-family: "myFont";
+  src: url("./Basteleur-Bold.woff");
+}
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: "Noto Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "myFont", Arial, Helvetica, sans-serif;
 }
 
-.grid {
-	height: 800px;
-	width: 60%;
-	border: 3px solid black;
-	border-radius: 30px;
-	margin: 50px auto;
-	padding: 10px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-	gap: 10px;
+.bodycontainer {
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.grid > * {
-	background-color: white;
-	border: 2px solid red;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 20px;
-	font-size: 3vh;
-	font-weight: lighter;
+
+.readout {
+  width: 25%;
+  height: 80%;
+  margin-left: 5%;
+  border: 2px solid black;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 1fr;
 }
-.grid__cell--1 {
-	background-color: white;
-	grid-column: 1/5;
+.readout__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
 }
-.grid__cell--16 {
-	background-color: white;
-	grid-column: 1/3;
+
+.calculator {
+  width: 50%;
+  height: 80%;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2.5fr 1fr 1fr 1fr 1fr;
+  gap: 5%;
+}
+.calculator > * {
+  background-color: white;
+  border: 2px solid black;
+  font-size: 2.5vw;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calculator__cell--screen {
+  background-color: white;
+  border-radius: 25px;
+  grid-column: 1/5;
 }
 
 /*# sourceMappingURL=main.css.map */

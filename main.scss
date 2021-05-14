@@ -1,44 +1,76 @@
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+@font-face {
+  font-family: "myFont";
+  src: url("./Basteleur-Bold.woff");
 }
 
-.grid {
-	height: 800px;
-	width: 70%;
-	border: 5px solid red;
-	margin: 50px auto; // centres vertically
-	padding: 10px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "myFont", Arial, Helvetica, sans-serif;
+}
 
-	display: grid;
+.bodycontainer {
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-	// set columns
-	// fr is a fractional unit
+.readout {
+  width: 25%;
+  height: 80%;
+  margin-left: 5%;
+  border: 2px solid black;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 1fr;
 
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+  &__clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+  }
+}
 
-	// set rows
+.calculator {
+  width: 50%;
+  height: 80%;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 20px;
 
-	grid-template-rows: 1fr 1fr 1fr 1fr;
+  display: grid;
 
-	gap: 10px;
+  // set columns
+  // fr is a fractional unit
 
-	& > * {
-		background-color: red;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
-	&__cell--1 {
-		background-color: yellow;
-		// set grid column -> starts / ends
-		grid-column: 1 / 5;
-	}
+  // set rows
 
-	&__cell--16 {
-		background-color: blue;
-		grid-column: 1 / 3;
-	}
+  grid-template-rows: 2.5fr 1fr 1fr 1fr 1fr;
+
+  gap: 5%;
+
+  & > * {
+    background-color: white;
+    border: 2px solid black;
+    font-size: 2.5vw;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__cell--screen {
+    background-color: white;
+    border-radius: 25px;
+
+    // set grid column -> starts / ends
+    grid-column: 1 / 5;
+  }
 }
