@@ -3,6 +3,57 @@
   src: url("./Basteleur-Bold.woff");
 }
 
+// small tablets/large smartphones (landscape)
+$screen-sm-min: 576px;
+// small tablets (portrait)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// large tablets/desktops
+$screen-xl-min: 1200px;
+
+// mixins
+
+// small devices
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// medium devices
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// large devices
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// extra-large devices
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// custom devices
+
+@mixin rwd($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -10,26 +61,51 @@
   font-family: "myFont", Arial, Helvetica, sans-serif;
 }
 
-.svgbox {
+.cutoff {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
   height: 100vh;
   width: 100%;
-  z-index: -1;
+}
+
+.svgbox {
+  height: 100vh;
+  width: 190%;
   position: absolute;
   overflow: hidden;
+
+  & > svg {
+    overflow: hidden;
+  }
 }
 
 .bodycontainer {
   display: flex;
+  flex-direction: column;
+  @include sm {
+    flex-direction: column;
+  }
+  @include md {
+    flex-direction: column;
+  }
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  overflow: hidden;
   padding: 25px;
   z-index: 10;
 }
 
 .readout {
-  width: 25%;
-  height: 40%;
+  width: 90%;
+  @include md {
+    width: 50%;
+  }
+  @include sm {
+    width: 70%;
+  }
+  height: 15%;
   opacity: 0.8;
   background-color: white;
   border: 2px solid black;
@@ -41,22 +117,31 @@
   overflow: scroll;
 
   & > ul > li {
-    margin-top: 80%;
+    padding-top: 19%;
+    @include sm {
+      padding-top: 10%;
+    }
     list-style: none;
     font-family: Helvetica;
     letter-spacing: 2px;
     font-weight: light;
-    font-size: 1vw;
+    font-size: 3vw;
+    @include md {
+      font-size: 1.5vw;
+    }
+    font-style: italic;
     text-align: left;
     line-height: 150%;
     word-spacing: 5px;
     & > span {
-      margin-top: 80%;
       list-style: none;
       font-family: Helvetica;
       letter-spacing: 2px;
       font-weight: bold;
-      font-size: 1vw;
+      font-size: 3vw;
+      @include md {
+        font-size: 1.5vw;
+      }
       text-align: left;
       line-height: 150%;
       word-spacing: 5px;
@@ -65,29 +150,55 @@
 }
 
 .info {
-  width: 25%;
-  height: 40%;
+  width: 90%;
+  height: 15%;
+  margin-bottom: 5%;
+  overflow: scroll;
+  @include md {
+    width: 50%;
+    height: 25%;
+  }
+  @include sm {
+    width: 70%;
+    height: 20%;
+    margin-bottom: 2%;
+  }
   background-color: white;
   opacity: 0.8;
   border: 2px solid black;
   border-radius: 50px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   & > p {
     font-family: Helvetica;
     font-weight: light;
-    font-size: 1vw;
+    font-style: italic;
+    font-size: 3vw;
+    @include md {
+      font-size: 1.5vw;
+    }
     text-align: center;
-    line-height: 300%;
-    padding: 10%;
+    line-height: 250%;
+    padding: 2% 20%;
     word-spacing: 5px;
   }
 }
 
 .calculator {
-  width: 40%;
+  width: 90%;
   height: 80%;
+  margin-bottom: 5%;
+  @include sm {
+    width: 70%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  @include md {
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
   border: 2px solid black;
   border-radius: 25px;
   padding: 20px;
@@ -118,7 +229,11 @@
 
   &__cell--screen {
     background-color: white;
+    width: auto;
     border-radius: 25px;
+    & > p {
+      word-wrap: break-word;
+    }
 
     // set grid column -> starts / ends
     grid-column: 1 / 5;

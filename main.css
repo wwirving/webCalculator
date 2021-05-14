@@ -9,26 +9,48 @@
   font-family: "myFont", Arial, Helvetica, sans-serif;
 }
 
-.svgbox {
+.cutoff {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
   height: 100vh;
   width: 100%;
-  z-index: -1;
+}
+
+.svgbox {
+  height: 100vh;
+  width: 190%;
   position: absolute;
+  overflow: hidden;
+}
+.svgbox > svg {
   overflow: hidden;
 }
 
 .bodycontainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  overflow: hidden;
   padding: 25px;
   z-index: 10;
 }
+@media (min-width: 576px) {
+  .bodycontainer {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .bodycontainer {
+    flex-direction: column;
+  }
+}
 
 .readout {
-  width: 25%;
-  height: 40%;
+  width: 90%;
+  height: 15%;
   opacity: 0.8;
   background-color: white;
   border: 2px solid black;
@@ -39,53 +61,100 @@
   align-items: center;
   overflow: scroll;
 }
+@media (min-width: 768px) {
+  .readout {
+    width: 50%;
+  }
+}
+@media (min-width: 576px) {
+  .readout {
+    width: 70%;
+  }
+}
 .readout > ul > li {
-  margin-top: 80%;
+  padding-top: 19%;
   list-style: none;
   font-family: Helvetica;
   letter-spacing: 2px;
   font-weight: light;
-  font-size: 1vw;
+  font-size: 3vw;
+  font-style: italic;
   text-align: left;
   line-height: 150%;
   word-spacing: 5px;
 }
+@media (min-width: 576px) {
+  .readout > ul > li {
+    padding-top: 10%;
+  }
+}
+@media (min-width: 768px) {
+  .readout > ul > li {
+    font-size: 1.5vw;
+  }
+}
 .readout > ul > li > span {
-  margin-top: 80%;
   list-style: none;
   font-family: Helvetica;
   letter-spacing: 2px;
   font-weight: bold;
-  font-size: 1vw;
+  font-size: 3vw;
   text-align: left;
   line-height: 150%;
   word-spacing: 5px;
 }
+@media (min-width: 768px) {
+  .readout > ul > li > span {
+    font-size: 1.5vw;
+  }
+}
 
 .info {
-  width: 25%;
-  height: 40%;
+  width: 90%;
+  height: 15%;
+  margin-bottom: 5%;
+  overflow: scroll;
   background-color: white;
   opacity: 0.8;
   border: 2px solid black;
   border-radius: 50px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+@media (min-width: 768px) {
+  .info {
+    width: 50%;
+    height: 25%;
+  }
+}
+@media (min-width: 576px) {
+  .info {
+    width: 70%;
+    height: 20%;
+    margin-bottom: 2%;
+  }
 }
 .info > p {
   font-family: Helvetica;
   font-weight: light;
-  font-size: 1vw;
+  font-style: italic;
+  font-size: 3vw;
   text-align: center;
-  line-height: 300%;
-  padding: 10%;
+  line-height: 250%;
+  padding: 2% 20%;
   word-spacing: 5px;
+}
+@media (min-width: 768px) {
+  .info > p {
+    font-size: 1.5vw;
+  }
 }
 
 .calculator {
-  width: 40%;
+  width: 90%;
   height: 80%;
+  margin-bottom: 5%;
   border: 2px solid black;
   border-radius: 25px;
   padding: 20px;
@@ -94,6 +163,20 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 2.5fr 1fr 1fr 1fr 1fr;
   gap: 5%;
+}
+@media (min-width: 576px) {
+  .calculator {
+    width: 70%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+@media (min-width: 768px) {
+  .calculator {
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
 }
 .calculator > * {
   background-color: white;
@@ -106,8 +189,12 @@
 }
 .calculator__cell--screen {
   background-color: white;
+  width: auto;
   border-radius: 25px;
   grid-column: 1/5;
+}
+.calculator__cell--screen > p {
+  word-wrap: break-word;
 }
 
 /*# sourceMappingURL=main.css.map */
