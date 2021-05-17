@@ -15,13 +15,33 @@ const screen = document.querySelector(".calculator__cell--screen");
 const splash = document.querySelector("#cutoff");
 
 const main = document.querySelector("#fade");
+
 let operatorIsClicked = true;
+
+let globalColor = 0;
 
 calculator.addEventListener("click", () => {
   if (event.defaultPrevented) {
     return; // do nothing if event processed
   }
   switch (event.target.classList.value) {
+    case "calculator":
+      if (globalColor === 0) {
+        calculator.style.backgroundColor = "#F17B91";
+        globalColor += 1;
+      } else if (globalColor === 1) {
+        calculator.style.backgroundColor = "#6EB66A";
+        globalColor += 1;
+      } else if (globalColor === 2) {
+        calculator.style.backgroundColor = "#FEDE0E";
+        globalColor += 1;
+      } else if (globalColor === 3) {
+        calculator.style.backgroundColor = "#459AD1";
+        globalColor += 1;
+      } else {
+        globalColor = 0;
+      }
+
     case "calculator__cell--screen":
       screen.textContent = "";
       operatorIsClicked = true;
