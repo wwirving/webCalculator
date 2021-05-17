@@ -72,6 +72,9 @@ $screen-xl-min: 1200px;
 .svgbox {
   height: 100vh;
   width: 190%;
+  @include lg {
+    width: 100%;
+  }
   position: absolute;
   overflow: hidden;
 
@@ -89,6 +92,9 @@ $screen-xl-min: 1200px;
   @include md {
     flex-direction: column;
   }
+  @include lg {
+    flex-direction: row;
+  }
   align-items: center;
   justify-content: space-between;
   height: 100vh;
@@ -104,6 +110,10 @@ $screen-xl-min: 1200px;
   }
   @include sm {
     width: 70%;
+  }
+  @include lg {
+    width: 25%;
+    height: 50%;
   }
   height: 15%;
   opacity: 0.8;
@@ -163,6 +173,10 @@ $screen-xl-min: 1200px;
     height: 20%;
     margin-bottom: 2%;
   }
+  @include lg {
+    width: 25%;
+    height: 50%;
+  }
   background-color: white;
   opacity: 0.8;
   border: 2px solid black;
@@ -198,6 +212,12 @@ $screen-xl-min: 1200px;
     width: 50%;
     margin-top: 5%;
     margin-bottom: 5%;
+  }
+  @include lg {
+    width: 45%;
+  }
+  @include xl {
+    width: 40%;
   }
   border: 2px solid black;
   border-radius: 25px;

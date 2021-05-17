@@ -105,7 +105,9 @@ const divide = (firstNumber, secondNumber) => {
 const doSum = (input) => {
   let total = 0;
   const sumArr = input.split(" ");
-  console.log(sumArr);
+  if (sumArr.length <= 1) {
+    total = sumArr[0];
+  }
   // loop through array and create sum
   for (let i = 0; i < sumArr.length; i++) {
     let value = sumArr[i];

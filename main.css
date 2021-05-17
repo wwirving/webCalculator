@@ -23,6 +23,11 @@
   position: absolute;
   overflow: hidden;
 }
+@media (min-width: 992px) {
+  .svgbox {
+    width: 100%;
+  }
+}
 .svgbox > svg {
   overflow: hidden;
 }
@@ -47,6 +52,11 @@
     flex-direction: column;
   }
 }
+@media (min-width: 992px) {
+  .bodycontainer {
+    flex-direction: row;
+  }
+}
 
 .readout {
   width: 90%;
@@ -69,6 +79,12 @@
 @media (min-width: 576px) {
   .readout {
     width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .readout {
+    width: 25%;
+    height: 50%;
   }
 }
 .readout > ul > li {
@@ -135,6 +151,12 @@
     margin-bottom: 2%;
   }
 }
+@media (min-width: 992px) {
+  .info {
+    width: 25%;
+    height: 50%;
+  }
+}
 .info > p {
   font-family: Helvetica;
   font-weight: light;
@@ -176,6 +198,16 @@
     width: 50%;
     margin-top: 5%;
     margin-bottom: 5%;
+  }
+}
+@media (min-width: 992px) {
+  .calculator {
+    width: 45%;
+  }
+}
+@media (min-width: 1200px) {
+  .calculator {
+    width: 40%;
   }
 }
 .calculator > * {
