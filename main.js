@@ -12,6 +12,11 @@ const calculator = document.querySelector(".calculator");
 
 const screen = document.querySelector(".calculator__cell--screen");
 
+const splash = document.querySelector("#cutoff");
+
+const main = document.querySelector("#fade");
+let operatorIsClicked = true;
+
 calculator.addEventListener("click", () => {
   if (event.defaultPrevented) {
     return; // do nothing if event processed
@@ -19,55 +24,100 @@ calculator.addEventListener("click", () => {
   switch (event.target.classList.value) {
     case "calculator__cell--screen":
       screen.textContent = "";
+      operatorIsClicked = true;
       break;
     case "calculator__cell--1":
       screen.textContent += "1";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--2":
       screen.textContent += "2";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--3":
       screen.textContent += "3";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--plus":
-      screen.textContent += " + ";
+      if (operatorIsClicked) {
+      } else {
+        screen.textContent += " + ";
+        operatorIsClicked = true;
+      }
       break;
     case "calculator__cell--4":
       screen.textContent += "4";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--5":
       screen.textContent += "5";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--6":
       screen.textContent += "6";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--minus":
-      screen.textContent += " - ";
+      if (operatorIsClicked) {
+      } else {
+        screen.textContent += " - ";
+        operatorIsClicked = true;
+      }
       break;
     case "calculator__cell--7":
       screen.textContent += "7";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--8":
       screen.textContent += "8";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--9":
       screen.textContent += "9";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--divide":
-      screen.textContent += " / ";
+      if (operatorIsClicked) {
+      } else {
+        screen.textContent += " / ";
+        operatorIsClicked = true;
+      }
       break;
     case "calculator__cell--0":
       screen.textContent += "0";
+      operatorIsClicked = false;
+
       break;
     case "calculator__cell--dot":
-      screen.textContent += ".";
+      if (operatorIsClicked) {
+      } else {
+        screen.textContent += ".";
+        operatorIsClicked = true;
+      }
       break;
     case "calculator__cell--equals":
-      screen.textContent += "" + "\r\n = " + `${doSum(screen.textContent)}`;
-      addToReadOut(screen.textContent);
+      if (operatorIsClicked) {
+      } else {
+        screen.textContent += "" + "\r\n = " + `${doSum(screen.textContent)}`;
+        addToReadOut(screen.textContent);
+        operatorIsClicked = true;
+      }
       break;
     case "calculator__cell--times":
-      screen.textContent += " * ";
+      if (operatorIsClicked) {
+      } else {
+        screen.textContent += " * ";
+        operatorIsClicked = true;
+      }
       break;
     default:
       return;
@@ -105,6 +155,9 @@ const divide = (firstNumber, secondNumber) => {
 const doSum = (input) => {
   let total = 0;
   const sumArr = input.split(" ");
+  // input "33 + 66"
+  // "22 + 33 = 55"
+  // ["33", "+", "66"]
   if (sumArr.length <= 1) {
     total = sumArr[0];
   }
@@ -150,7 +203,6 @@ const doSum = (input) => {
 };
 
 let testSum = "435 + 238 * 234 / 3243 - 213";
-console.log(doSum(testSum));
 
 // function to add last sum to console list
 
