@@ -18,6 +18,8 @@ const main = document.querySelector("#fade");
 
 let operatorIsClicked = true;
 
+let isStart = true;
+
 let globalColor = 0;
 
 calculator.addEventListener("click", () => {
@@ -45,20 +47,24 @@ calculator.addEventListener("click", () => {
     case "calculator__cell--screen":
       screen.textContent = "";
       operatorIsClicked = true;
+      isStart = true;
       break;
     case "calculator__cell--1":
       screen.textContent += "1";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--2":
       screen.textContent += "2";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--3":
       screen.textContent += "3";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--plus":
@@ -71,19 +77,27 @@ calculator.addEventListener("click", () => {
     case "calculator__cell--4":
       screen.textContent += "4";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--5":
       screen.textContent += "5";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--6":
       screen.textContent += "6";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--minus":
+      if (isStart) {
+        screen.textContent += " - ";
+        operatorIsClicked = true;
+        isStart = false;
+      }
       if (operatorIsClicked) {
       } else {
         screen.textContent += " - ";
@@ -93,16 +107,19 @@ calculator.addEventListener("click", () => {
     case "calculator__cell--7":
       screen.textContent += "7";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--8":
       screen.textContent += "8";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--9":
       screen.textContent += "9";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--divide":
@@ -115,6 +132,7 @@ calculator.addEventListener("click", () => {
     case "calculator__cell--0":
       screen.textContent += "0";
       operatorIsClicked = false;
+      isStart = false;
 
       break;
     case "calculator__cell--dot":

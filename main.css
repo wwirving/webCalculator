@@ -405,5 +405,11 @@
 .calculator__cell--screen > p {
   word-wrap: break-word;
 }
+.calculator__cell--dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20%;
+}
 
 /*# sourceMappingURL=main.css.map */
