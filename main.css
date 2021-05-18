@@ -101,7 +101,7 @@
   position: absolute;
   overflow: hidden;
 }
-@media (min-width: 992px) {
+@media (min-width: 882px) {
   .svgbox {
     width: 100%;
   }
@@ -130,9 +130,15 @@
     flex-direction: column;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 882px) {
   .bodycontainer {
     flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .bodycontainer {
+    padding: 10px;
+    padding-top: 15px;
   }
 }
 
@@ -184,10 +190,20 @@
     width: 70%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 882px) {
   .readout {
     width: 25%;
     height: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .readout > ul {
+    padding-top: 2%;
+  }
+}
+@media (min-width: 882px) {
+  .readout > ul {
+    padding-top: 5%;
   }
 }
 .readout > ul > li {
@@ -217,6 +233,11 @@
     font-size: 2.5vw;
   }
 }
+@media (min-width: 1200px) {
+  .readout > ul > li {
+    font-size: 2vw;
+  }
+}
 .readout > ul > li > span {
   list-style: none;
   font-family: Helvetica;
@@ -242,6 +263,11 @@
 @media (min-width: 768px) {
   .readout > ul > li > span {
     font-size: 2.5vw;
+  }
+}
+@media (min-width: 1200px) {
+  .readout > ul > li > span {
+    font-size: 2vw;
   }
 }
 
@@ -275,6 +301,7 @@
   .info {
     width: 50%;
     height: 25%;
+    margin-bottom: 0%;
   }
 }
 @media (min-width: 576px) {
@@ -284,7 +311,7 @@
     margin-bottom: 2%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 882px) {
   .info {
     width: 25%;
     height: 50%;
@@ -315,6 +342,11 @@
 @media (min-width: 768px) {
   .info > p {
     font-size: 2.5vw;
+  }
+}
+@media (min-width: 1200px) {
+  .info > p {
+    font-size: 2vw;
   }
 }
 
@@ -352,11 +384,11 @@
 @media (min-width: 768px) {
   .calculator {
     width: 50%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 0%;
+    margin-bottom: 2%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 882px) {
   .calculator {
     width: 45%;
   }
@@ -390,14 +422,14 @@
 .calculator > * :hover {
   transform: scale(1.02);
 }
-@media (min-width: 992px) {
+@media (min-width: 882px) {
   .calculator > * {
     font-size: 3.5vw;
   }
 }
 @media (min-width: 1200px) {
   .calculator > * {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
 }
 .calculator > *:hover {
