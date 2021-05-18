@@ -238,7 +238,7 @@ const doSum = (input) => {
     }
   }
 
-  let roundedTotal = total.toFixed(3);
+  let roundedTotal = +total.toFixed(3);
   return roundedTotal;
 };
 
