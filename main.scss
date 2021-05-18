@@ -219,9 +219,12 @@ $screen-xl-min: 1200px;
   user-select: none; /* Non-prefixed version, */
 
   & > ul > li {
-    padding-top: 19%;
+    padding-top: 15%;
     @include sm {
       padding-top: 10%;
+    }
+    @include md {
+      padding-top: 2%;
     }
     list-style: none;
     font-family: Helvetica;
@@ -229,7 +232,7 @@ $screen-xl-min: 1200px;
     font-weight: light;
     font-size: 3vw;
     @include md {
-      font-size: 1.5vw;
+      font-size: 2.5vw;
     }
     font-style: italic;
     text-align: center;
@@ -248,7 +251,7 @@ $screen-xl-min: 1200px;
       -ms-user-select: none; /* Internet Explorer/Edge */
       user-select: none; /* Non-prefixed version, */
       @include md {
-        font-size: 1.5vw;
+        font-size: 2.5vw;
       }
       text-align: left;
       line-height: 150%;
@@ -303,7 +306,7 @@ $screen-xl-min: 1200px;
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, */
     @include md {
-      font-size: 1.5vw;
+      font-size: 2.5vw;
     }
     text-align: center;
     line-height: 250%;
@@ -391,12 +394,17 @@ $screen-xl-min: 1200px;
     background-color: white;
     width: 100%;
     border-radius: 25px;
-    padding: 15px;
+    padding-top: 5%;
     display: block;
+    overflow: scroll;
+    text-align: center;
+
     word-wrap: break-word;
     & > p {
       word-wrap: break-word;
-      width: 100%;
+      text-align: center;
+      margin-top: 50px;
+      max-width: 90%;
       height: 100%;
     }
 

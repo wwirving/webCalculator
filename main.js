@@ -237,7 +237,9 @@ const doSum = (input) => {
       }
     }
   }
-  return total;
+
+  let roundedTotal = total.toFixed(3);
+  return roundedTotal;
 };
 
 let testSum = "435 + 238 * 234 / 3243 - 213";

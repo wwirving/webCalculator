@@ -191,7 +191,7 @@
   }
 }
 .readout > ul > li {
-  padding-top: 19%;
+  padding-top: 15%;
   list-style: none;
   font-family: Helvetica;
   letter-spacing: 2px;
@@ -209,7 +209,12 @@
 }
 @media (min-width: 768px) {
   .readout > ul > li {
-    font-size: 1.5vw;
+    padding-top: 2%;
+  }
+}
+@media (min-width: 768px) {
+  .readout > ul > li {
+    font-size: 2.5vw;
   }
 }
 .readout > ul > li > span {
@@ -236,7 +241,7 @@
 }
 @media (min-width: 768px) {
   .readout > ul > li > span {
-    font-size: 1.5vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -309,7 +314,7 @@
 }
 @media (min-width: 768px) {
   .info > p {
-    font-size: 1.5vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -402,14 +407,18 @@
   background-color: white;
   width: 100%;
   border-radius: 25px;
-  padding: 15px;
+  padding-top: 5%;
   display: block;
+  overflow: scroll;
+  text-align: center;
   word-wrap: break-word;
   grid-column: 1/5;
 }
 .calculator__cell--screen > p {
   word-wrap: break-word;
-  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  max-width: 90%;
   height: 100%;
 }
 .calculator__cell--dot {
