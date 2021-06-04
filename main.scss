@@ -1,6 +1,6 @@
 @font-face {
   font-family: "myFont";
-  src: url("./Basteleur-Bold.woff");
+  src: url("./fonts/Basteleur-Bold.woff");
 }
 
 // small tablets/large smartphones (landscape)
@@ -409,6 +409,7 @@ $screen-xl-min: 1200px;
 
   & > *:hover {
     opacity: 0.8;
+    transform: scale(1.05);
   }
 
   &__cell--screen {

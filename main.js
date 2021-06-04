@@ -17,10 +17,10 @@ const splash = document.querySelector("#cutoff");
 const main = document.querySelector("#fade");
 
 let operatorIsClicked = true;
-
 let isStart = true;
-
 let globalColor = 0;
+let hasMultiplication = false;
+let hasDivision = false;
 
 calculator.addEventListener("click", () => {
   if (event.defaultPrevented) {
@@ -48,6 +48,8 @@ calculator.addEventListener("click", () => {
       screen.textContent = "";
       operatorIsClicked = true;
       isStart = true;
+      hasMultiplication = false;
+      hasDivision = false;
       break;
     case "calculator__cell--1":
       screen.textContent += "1";
@@ -123,10 +125,13 @@ calculator.addEventListener("click", () => {
 
       break;
     case "calculator__cell--divide":
-      if (operatorIsClicked) {
-      } else {
-        screen.textContent += " / ";
-        operatorIsClicked = true;
+      if (!hasDivision) {
+        if (operatorIsClicked) {
+        } else {
+          screen.textContent += " / ";
+          operatorIsClicked = true;
+          hasDivision = true;
+        }
       }
       break;
     case "calculator__cell--0":
@@ -148,13 +153,18 @@ calculator.addEventListener("click", () => {
         screen.textContent += "" + "\r\n = " + `${doSum(screen.textContent)}`;
         addToReadOut(screen.textContent);
         operatorIsClicked = true;
+        hasMultiplication = false;
+        hasDivision = false;
       }
       break;
     case "calculator__cell--times":
-      if (operatorIsClicked) {
-      } else {
-        screen.textContent += " * ";
-        operatorIsClicked = true;
+      if (!hasMultiplication) {
+        if (operatorIsClicked) {
+        } else {
+          screen.textContent += " * ";
+          operatorIsClicked = true;
+          hasMultiplication = true;
+        }
       }
       break;
     default:

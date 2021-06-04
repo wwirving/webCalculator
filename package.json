@@ -3,6 +3,7 @@
 		"sass": "^1.32.8"
 	},
 	"scripts": {
-		"watch:scss": "sass --watch main.scss main.css"
+		"watch:scss": "sass --watch main.scss main.css",
+		"e2e": "cypress open"
 	}
 }
